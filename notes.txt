@@ -1,0 +1,42 @@
+ 
+
+@Config annotation plays a key role in make an action to the respective Datamodel in framework.
+
+It contains an url attribute which holds the respecive path mapping inside the datemodel.
+
+@configs annotations is to hold multiple array of @config annotations as below
+
+	 @Configs({
+            @Config(url="/vpAddEditOwner/vtAddEditOwner/vsAddEditOwner/vfAddEditOwner/_update"),
+            @Config(url="/p/ownerlandingview/_nav?pageId=vpOwners")
+        })
+
+config annotation can identity the url(s) that mapped in dataModel only.
+
+It contain some standard set of naming conventions to do CRUD operations & processing i.e below
+
+_delete: Removes the model from the database
+
+_search: Searches the model based on a search criteria
+ 
+_process: Executes asigned workflow process or custom hanlders
+ 
+_nav: navigates to the model
+
+
+Below are some of the example referance where it was used in source code.
+
+
+    @Configs({
+            @Config(url="/vpOwners/vtOwners/vsSearchOwnerCriteria/vfSearchOwnerCriteria/_update"),
+            @Config(url="/vpOwners/vtOwners/vsOwners/owners.m/_process?fn=_set&amp;url=/p/owner/_search?fn=example")
+        })
+
+	 @Configs({
+             @Config(url="/p/ownerview/_new")
+        })
+
+	  @Configs({
+            @Config(url="/vpAddEditOwner/vtAddEditOwner/vsAddEditOwner/vfAddEditOwner/_update"),
+            @Config(url="/p/ownerlandingview/_nav?pageId=vpOwners")
+        })
